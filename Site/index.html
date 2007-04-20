@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<title>Workload Widget</title>
+		
+		<style type="text/css">
+		body {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 11pt;
+		}
+		
+		h1, h2 {
+			text-transform: uppercase;
+		}
+		</style>
+	</head>
+	<body>
+		<div style="width: 45em;">
+			<img src="images/screenshot-front.png" width="390" height="210" alt="Screenshot" align="right" />
+			<h1>Workload</h1>
+			<p>
+				Workload is a <a href="http://www.apple.com/macosx/features/dashboard/">Dashboard</a> widget for people who use Marketcircle's <a href="http://www.billings2.com">excellent time reporting and invoicing application Billings</a>.
+			</p>
+			<p>
+				It queries Billings' database to show you how much you have worked the last week, how much you work on average and optionally how that compares to your goal.
+			</p>
+			<p>
+				The widget requires Billings 2.0 (but at this point only tested with Billings 2.5 beta).
+			</p>
+			<p>
+				I have no affiliation with Marketcircle nor is this widget blessed by them in any way. The widget is currently beta, so use at your own risk, however, it doesn't change the Billings database so you should be safe, but a back-up is always a good idea.
+			</p>
+			<h2>Download &amp; install</h2>
+			<p>
+				<a href="Workload.wdgt.zip">Workload.wdgt.zip</a>
+			</p>
+			<p>
+				The usual widget installation instructions applies: if you haven't set your web browser to automatically open downloaded files, just double click the zip-file and then double click the "Workload.wdgt" file that is extracted from it. The system should now ask you if you want to install the widget, click ok as many times as it takes.
+				</p>
+			<h2>Explanation</h2>
+			<p>
+				Each column represents a day, where the rightmost column is today. If you haven't guessed at this point, the letters below the columns means "Saturday", "Sunday", "Monday", etc.
+			</p>
+			<p>
+				Why the odd order of the days? Well, since the rightmost column is today, the next rightmost is yesterday and so on. If today was a Wednesday, the leftmost column would represent last Thursday, got it?
+			</p>
+			<p>
+				The red bars show how much you worked that day. How much you worked is determined by suming up all time entries for that day (a time entry is all the entries of a slip in Billings, you find them if you click on "Log..." in the slip inspector window).
+			</p>
+			<p>
+				The light gray bars shows your goal. In the screenshot below I have set a goal of eight hours per day, except for weekends.
+			</p>
+			<p>
+				The dark grey bars are how much you work on average, so in the screenshot below you can see that on Wednesday I worked more than I work on average on Wednesdays, and the same for Saturday, but for the rest of the days I worked less than average. 
+			</p>
+			<img src="images/explanation.png" width="390" height="210" alt="Explanation" />
+			<ol>
+				<li>The goal for monday</li>
+				<li>How much on average I work on mondays</li>
+				<li>How much I actually worked last monday</li>
+			</ol>
+			<p>
+				Most of the things above can be changes. This is a screenshot of the back with the preferences.
+			</p>
+			<img src="images/screenshot-back.png" width="390" height="210" alt="Explanation" />
+			<p>
+				You can change the goal (the light gray bars) by entering another number in the box where it currently says "8" (I thought it an appropriate default). You can also check the "I work weekeds" checkbox if you want the goal bars to be visible for Saturday and Sunday too. Currently you can't set different goals for different days, I haven't decided if this just adds uneeded complexity, or if it would be useful.
+			</p>
+			<p>
+				If you think goals are silly, you can uncheck the checkbox and the goal bars will not be displayed at all.
+			</p>
+			<p>
+				You can also choose to not include the average hours, or change which period the average should be based on. "Forever" means that the widget will use the earliest date for which there exists a time entry as start date. If you choose a period which is longer than you have used Billings, the average will be based on the longest possible period (so if you have used Billings for three months, choosing anything above two months would be the same as choosing "Forever").
+			</p>
+			<h2>Known bugs</h2>
+			<p>
+				When Billings' timer is on, the the hours for the current day won't be right. The reason is that when a slip's timer is active, the last time entry's recorded duration is not the duration of the current session, but the sum of all the time entries of the slip, plus the duration of the current session. Why this is so I have no idea, but I'm working on a workaround.
+			</p>
+			<h2>Bugs, comments and questions</h2>
+			<p>
+				Workload is currently beta, so bug reports, comments and questions are welcome. Don't hesitate to mail me at <a href="mailto:&#116;&#104;&#101;&#111;&#064;&#105;&#099;&#111;&#110;&#097;&#114;&#097;&#046;&#110;&#101;&#116;">&#116;&#104;&#101;&#111;&#064;&#105;&#099;&#111;&#110;&#097;&#114;&#097;&#046;&#110;&#101;&#116;</a>.
+			</p>
+		</div>
+	</body>
+</html>
