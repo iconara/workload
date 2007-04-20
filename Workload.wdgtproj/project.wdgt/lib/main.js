@@ -183,6 +183,7 @@ function updateDayNames( ) {
 function getPastWeekHours( ) {
 	//new Date(new Date().getTime() - (1000*60*60*24*7))
 
+	/*
 	var g = createReverseDateGenerator();
 	
 	var days = [ ];
@@ -198,13 +199,16 @@ function getPastWeekHours( ) {
 	}
 	
 	return days.reverse();
+	*/
+	
+	return alignWeek([1, 3, 5.5, 8, 5.9, 4, 0]);
 }
 
 function getPastWeekAverages( ) {
-	var durationAverages = [];
+	var durationAverages = [0, 5, 8, 6.5, 7, 8, 0];
 	var durationSums = [0, 0, 0, 0, 0, 0, 0];
 	var days = [0, 0, 0, 0, 0, 0, 0];
-	
+	/*
 	for ( var key in dates ) {
 		var date = dates[key];
 		
@@ -217,6 +221,7 @@ function getPastWeekAverages( ) {
 	for ( var i = 0; i < 7; i++ ) {
 		durationAverages[i] = (durationSums[i]/days[i])/(60 * 60);
 	}
+	*/
 	
 	return alignWeek(durationAverages);
 }

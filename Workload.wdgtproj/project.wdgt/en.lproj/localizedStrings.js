@@ -16,3 +16,4 @@ localizedStrings['lastYear'] = 'Last year';
 localizedStrings['sixMonths'] = 'Six months';
 localizedStrings['twoMonths'] = 'Two months';
 localizedStrings['oneMonth'] = 'One month';
+localizedStrings['infoText'] = 'Displays data from the Billings 2 database. Developed by Theo Hultberg / Iconara. www.iconara.net';

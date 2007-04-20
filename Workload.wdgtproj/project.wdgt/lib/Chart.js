@@ -35,6 +35,7 @@ function createChart( chartNode, max ) {
 	var draw = function( context, item ) {
 		context.save();
 
+		//context.translate(1, 0);
 		context.scale(1, -1);
 		context.scale(chartNode.width/7, chartNode.height/max);
 		context.translate(0, -max);

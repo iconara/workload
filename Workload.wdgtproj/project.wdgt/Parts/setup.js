@@ -6,7 +6,7 @@ function setupParts() {
     CreateInfoButton('info', { frontID: 'front', foregroundStyle: 'white', backgroundStyle: 'black', onclick: 'showBack' });
     CreateGlassButton('done', { text: 'Done', onclick: 'showFront' });
     CreateText('hoursLabel', { text: 'hoursLabel' });
-    CreateText('infoText', { text: 'Displays data from the Billings 2 database. Developed by Theo Hultberg / Iconara. www.iconara.net' });
+    CreateText('infoText', { text: 'infoText' });
     CreateText('loadingIndicator', { text: 'loadingMessage' });
     CreateText('errorMessage', { text: 'errorDataLoad' });
     CreateText('day0', { text: 'X' });
