@@ -1,3 +1,12 @@
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 .shadowed-text {
 	text-shadow: rgb(0, 0, 0) 0px 1px 2px;
 }

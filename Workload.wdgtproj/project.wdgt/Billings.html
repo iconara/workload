@@ -11,7 +11,10 @@
 	<script type="text/javascript" src="lib/util.js" charset="utf-8"></script>
 	<script type="text/javascript" src="lib/Chart.js" charset="utf-8"></script>
 	<script type="text/javascript" src="lib/SQLite.js" charset="utf-8"></script>
-	<script type="text/javascript" src="lib/Controller.js" charset="utf-8"></script>
+	<script type="text/javascript" src="lib/ModelManager.js" charset="utf-8"></script>
+	<script type="text/javascript" src="lib/PreferencesController.js" charset="utf-8"></script>
+	<script type="text/javascript" src="lib/BackController.js" charset="utf-8"></script>
+	<script type="text/javascript" src="lib/WidgetController.js" charset="utf-8"></script>
 	<script type="text/javascript" src="lib/main.js" charset="utf-8"></script>
 	
     <script type="text/javascript" src="AppleClasses/AppleAnimator.js" charset="utf-8"></script>
@@ -51,33 +54,34 @@
 	<div apple-part="com.apple.Dashcode.part.text" class="shadowed-text apple-text apple-no-children" apple-default-image-visibility="hidden" id="loadingIndicator" apple-group="text9"></div>
 	<div apple-part="com.apple.Dashcode.part.text" class="shadowed-text apple-text apple-no-children" apple-default-image-visibility="hidden" id="errorMessage" apple-group="text9"></div>
 	
-	<img src="Images/beta.png" id="betaRibbonFront">
+	
 	</div>
     <div id="back">
 	   <img id="backImg" src="Images/back.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.backimage" apple-style=" image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.1500,0.1500,0.1500; image-border-width: 3; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
     	
         <div id="done" class="apple-no-children" apple-part="com.apple.Dashcode.part.glassbutton"></div>
     <div apple-part="com.apple.Dashcode.part.checkboxbutton" id="showGoalPart" apple-group="checkboxbutton">
-	<input type="checkbox" name="showGoal" checked="" apple-group="checkboxbutton" value="" onchange="onPreferencesChanged();" id="showGoal">
-	<div style="position: absolute; top: 2px; left: 18px; text-align: left; vertical-align: middle;" apple-group="checkboxbutton" id="checkboxbutton0" class="shadowed-text">Show daily goal of</div>
+	<input type="checkbox" name="showGoal" checked="" apple-group="checkboxbutton" value="" id="showGoal">
+	<div style="position: absolute; top: 2px; left: 18px; text-align: left; vertical-align: middle;" apple-group="checkboxbutton" id="showGoalLabel" class="shadowed-text">Show daily goal of</div>
 </div>
     <div apple-part="com.apple.Dashcode.part.checkboxbutton" id="workWeekendPart" apple-group="checkboxbutton3">
-	<input type="checkbox" name="workWeekend" apple-group="checkboxbutton3" onchange="onPreferencesChanged();" id="weekendGoal">
-	<div style="position: absolute; top: 2px; left: 18px; text-align: left; vertical-align: middle;" apple-group="checkboxbutton3" id="checkboxbutton31" class="shadowed-text">I work weekends</div>
+	<input type="checkbox" name="workWeekend" apple-group="checkboxbutton3" id="weekendGoal">
+	<div style="position: absolute; top: 2px; left: 18px; text-align: left; vertical-align: middle;" apple-group="checkboxbutton3" id="weekendGoalLabel" class="shadowed-text">I work weekends</div>
 </div>
     
     
-    <input type="text" value="8" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="goalHours" apple-group="textfield" onchange="onPreferencesChanged();">
+    <input type="text" value="8" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="goalHours" apple-group="textfield">
     <div apple-part="com.apple.Dashcode.part.text" class="shadowed-text apple-text apple-no-children" apple-default-image-visibility="hidden" id="hoursLabel" apple-group="text"></div>
     <div apple-part="com.apple.Dashcode.part.checkboxbutton" id="showAveragesPart" apple-group="checkboxbutton">
-	<input type="checkbox" name="showAverages" checked="" apple-group="checkboxbutton" id="showAverages" onchange="onPreferencesChanged();">
-	<div style="position: absolute; top: 2px; left: 18px; text-align: left; vertical-align: middle;" apple-group="checkboxbutton" id="checkboxbutton2" class="shadowed-text">Show averages using data from</div>
+	<input type="checkbox" name="showAverages" checked="" apple-group="checkboxbutton" id="showAverages">
+	<div style="position: absolute; top: 2px; left: 18px; text-align: left; vertical-align: middle;" apple-group="checkboxbutton" id="showAveragesLabel" class="shadowed-text">Show averages using data from</div>
 </div>
-    <div apple-part="com.apple.Dashcode.part.text" class="shadowed-text apple-text apple-no-children" apple-default-image-visibility="hidden" id="infoText" apple-group="text1"></div>
-   	<select apple-part="com.apple.Dashcode.part.backpopupbutton" id="averageSource" apple-group="popup" onchange="onPreferencesChanged(event);"> 	 	 	</select>
-    <img src="Images/iconara.png" id="iconara" onclick="widget.openURL(" http://www.iconara.net/");"="">
-    <img src="Images/beta.png" id="betaRibbonBack">
+	<div class="shadowed-text" id="infoText">Developed by Theo Hultberg / Iconara.</div>
+   	<select apple-part="com.apple.Dashcode.part.backpopupbutton" id="averageSource" apple-group="popup"> 	 	 	</select>
+    <img src="Images/iconara.png" id="iconara">
     
+    
+    <div class="shadowed-text" id="infoUrl">developer.iconara.net</div>
     </div>
 </body>
 </html>

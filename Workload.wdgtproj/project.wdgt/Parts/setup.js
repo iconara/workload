@@ -17,5 +17,6 @@ function setupParts() {
     CreateText('day4', { text: 'X' });
     CreateText('day6', { text: 'X' });
     CreateOvalShape('todayBg', {  });
+    CreateText('infoUrl', { text: 'infoUrl' });
 }
 window.addEventListener('load', setupParts, false);

@@ -76,12 +76,6 @@ body {
 	left: 23px;
 }
 
-#checkboxbutton0 {
-	width: 120px;
-	color: rgb(230, 230, 230);
-	font-size: 10pt;
-}
-
 #goalHours {
 	position: absolute;
 	color: black;
@@ -117,16 +111,6 @@ body {
 	top: 80px;
 	left: 241px;
 	width: 128px;
-}
-
-#checkboxbutton2 {
-	color: rgb(230, 230, 230);
-	font-size: 10pt;
-}
-
-#checkboxbutton31 {
-	color: rgb(230, 230, 230);
-	font-size: 10pt;
 }
 
 #iconara {
@@ -264,14 +248,6 @@ body {
 	top: 170px;
 }
 
-#betaRibbonBack {
-	width: 80px !important;
-	height: 80px !important;
-	position: absolute;
-	top: 11px;
-	left: 299px;
-}
-
 #infoText {
 	position: absolute;
 	font-family: Helvetica Neue;
@@ -279,8 +255,8 @@ body {
 	color: rgb(230, 230, 230);
 	left: 56px;
 	width: 258px;
-	top: 155px;
-	height: 37px;
+	top: 162px;
+	height: 13px;
 }
 
 #hoursLabel {
@@ -308,11 +284,30 @@ body {
 	left: 308px;
 }
 
-#betaRibbonFront {
-	width: 80px !important;
-	height: 80px !important;
+#showGoalLabel {
+	width: 120px;
+	color: rgb(230, 230, 230);
+	font-size: 10pt;
+}
+
+#weekendGoalLabel {
+	color: rgb(230, 230, 230);
+	font-size: 10pt;
+}
+
+#showAveragesLabel {
+	color: rgb(230, 230, 230);
+	font-size: 10pt;
+}
+
+#infoUrl {
 	position: absolute;
-	top: 12px;
-	left: 299px;
+	font-family: Helvetica Neue;
+	font-size: 8pt;
+	color: rgb(230, 230, 230);
+	width: 258px;
+	height: 13px;
+	left: 56px;
+	top: 174px;
 }
 
