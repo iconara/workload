@@ -34,15 +34,6 @@ function createWidgetController( preferencesController ) {
 			connect(modelManager, "error",  onModelError);
 
 			chart = createChart(getElement("chart"), MAX_HOURS_PER_DAY);
-
-			replaceChildNodes(
-				"averageSource",
-				OPTION({"value": "forever"},   localizedStrings["forever"]),
-				OPTION({"value": "year"},      localizedStrings["lastYear"]),
-				OPTION({"value": "sixMonths"}, localizedStrings["sixMonths"]),
-				OPTION({"value": "twoMonths"}, localizedStrings["twoMonths"]),
-				OPTION({"value": "oneMonth"},  localizedStrings["oneMonth"])
-			);
 		} else {
 			inErrorState = true;
 			

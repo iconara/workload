@@ -29,30 +29,30 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>601d377ae1b7a741</string>
+		<string>a35a04a812b8a741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtprojvZkJY7/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtproj62cQrc/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>2</integer>
+		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.11145833134651184</real>
+		<real>0.3984375</real>
 		<key>percent-y</key>
-		<real>0.3958333432674408</real>
+		<real>0.41249999403953552</real>
 		<key>pos-x</key>
-		<integer>1316</integer>
+		<integer>765</integer>
 		<key>pos-y</key>
-		<integer>475</integer>
+		<integer>495</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
 	<key>EvaluatorFrame</key>
-	<string>-690 560 690 618 -1440 300 1440 900 </string>
+	<string>1328 271 503 391 0 0 1920 1178 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>

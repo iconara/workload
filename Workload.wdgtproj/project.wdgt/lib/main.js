@@ -4,8 +4,8 @@ var backController;
 
 
 function main( ) {
-	preferencesController = createPreferencesController();
 	backController = createBackController();
+	preferencesController = createPreferencesController();
 	widgetController = createWidgetController(preferencesController);
 
 	connect(widget, "show",      widgetController, widgetController.start);

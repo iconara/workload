@@ -3,7 +3,7 @@ function createPreferencesController( ) {
 	
 	
 	var init = function( ) {
-		restorePreferences();
+		restore();
 	
 		return pc;
 	}
@@ -27,7 +27,7 @@ function createPreferencesController( ) {
 		signal(pc, "update");
 	}
 
-	var restorePreferences = function( ) {
+	var restore = function( ) {
 		if ( widget.preferenceForKey("preferencesSet") ) {
 			// if there are preferences saved restore these
 		

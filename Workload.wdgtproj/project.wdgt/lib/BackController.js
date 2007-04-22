@@ -15,6 +15,16 @@ function createBackController( ) {
 	
 		connect("infoUrl", "onclick", function( ) { widget.openURL("http://developer.iconara.net/"); });
 	
+		replaceChildNodes(
+			"averageSource",
+			OPTION({"value": "forever"},   localizedStrings["forever"]),
+			OPTION({"value": "year"},      localizedStrings["lastYear"]),
+			OPTION({"value": "sixMonths"}, localizedStrings["sixMonths"]),
+			OPTION({"value": "twoMonths"}, localizedStrings["twoMonths"]),
+			OPTION({"value": "oneMonth"},  localizedStrings["oneMonth"])
+		);
+
+	
 		return bc;
 	}
 	
