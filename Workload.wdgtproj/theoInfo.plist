@@ -20,8 +20,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {731, 0}}</string>
-			<string>{{0, 10}, {731, 507}}</string>
+			<string>{{0, 0}, {929, 250}}</string>
+			<string>{{0, 260}, {929, 813}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -29,11 +29,11 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>2f4fbf2d6bb2a741</string>
+		<string>601d377ae1b7a741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtprojU0uML3/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtprojvZkJY7/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
@@ -41,13 +41,13 @@
 		<key>percent-type</key>
 		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.35104167461395264</real>
+		<real>0.11145833134651184</real>
 		<key>percent-y</key>
-		<real>0.32416665554046631</real>
+		<real>0.3958333432674408</real>
 		<key>pos-x</key>
-		<integer>856</integer>
+		<integer>1316</integer>
 		<key>pos-y</key>
-		<integer>389</integer>
+		<integer>475</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -63,12 +63,12 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {246, 538}}</string>
-			<string>{{247, 0}, {732, 538}}</string>
+			<string>{{0, 0}, {246, 1094}}</string>
+			<string>{{247, 0}, {930, 1094}}</string>
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>-1319 619 978 559 -1440 300 1440 900 </string>
+	<string>251 63 1176 1115 0 0 1920 1178 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -83,8 +83,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {248, 261}}</string>
-			<string>{{0, 271}, {248, 246}}</string>
+			<string>{{0, 0}, {248, 545}}</string>
+			<string>{{0, 555}, {248, 518}}</string>
 		</array>
 	</dict>
 	<key>Objects view expanded items</key>
