@@ -6,7 +6,7 @@ var MAX_HOURS_PER_DAY = 10;
 
 var RETRIES_ON_ERROR = 3;
 
-var DURATION_BY_DATE_SQL = "SELECT SUM(endDateTime - startDateTime) AS duration, date(startDateTime + %referenceDate%, 'unixepoch') AS startDate FROM TimeEntry GROUP BY startDate ORDER BY startDate";
+var DURATION_BY_DATE_SQL = "SELECT SUM(endDateTime - startDateTime) AS duration, date(startDateTime + %referenceDate%, 'unixepoch') AS startDate FROM TimeEntry WHERE strftime('%s', endDateTime + %referenceDate%) < strftime('%s', 'now') GROUP BY startDate ORDER BY startDate";
 
 
 var sqlite;
@@ -66,7 +66,7 @@ function update( ) {
 }
 
 function getData( ) {
-	var d = sqlite.query(DURATION_BY_DATE_SQL.replace("%referenceDate%", COCOA_REFERENCE_DATE));
+	var d = sqlite.query(DURATION_BY_DATE_SQL.replace(new RegExp("%referenceDate%", "g"), COCOA_REFERENCE_DATE));
 	
 	d.addErrback(onDataError);
 	d.addCallback(onData);
@@ -183,7 +183,6 @@ function updateDayNames( ) {
 function getPastWeekHours( ) {
 	//new Date(new Date().getTime() - (1000*60*60*24*7))
 
-	/*
 	var g = createReverseDateGenerator();
 	
 	var days = [ ];
@@ -199,16 +198,13 @@ function getPastWeekHours( ) {
 	}
 	
 	return days.reverse();
-	*/
-	
-	return alignWeek([1, 3, 5.5, 8, 5.9, 4, 0]);
 }
 
 function getPastWeekAverages( ) {
-	var durationAverages = [0, 5, 8, 6.5, 7, 8, 0];
-	var durationSums = [0, 0, 0, 0, 0, 0, 0];
-	var days = [0, 0, 0, 0, 0, 0, 0];
-	/*
+	var durationAverages = [0, 0, 0, 0, 0, 0, 0];
+	var durationSums     = [0, 0, 0, 0, 0, 0, 0];
+	var days             = [0, 0, 0, 0, 0, 0, 0];
+
 	for ( var key in dates ) {
 		var date = dates[key];
 		
@@ -221,7 +217,6 @@ function getPastWeekAverages( ) {
 	for ( var i = 0; i < 7; i++ ) {
 		durationAverages[i] = (durationSums[i]/days[i])/(60 * 60);
 	}
-	*/
 	
 	return alignWeek(durationAverages);
 }
