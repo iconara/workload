@@ -20,8 +20,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {929, 250}}</string>
-			<string>{{0, 260}, {929, 813}}</string>
+			<string>{{0, 0}, {929, 294}}</string>
+			<string>{{0, 304}, {929, 769}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -29,11 +29,11 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>a35a04a812b8a741</string>
+		<string>e0649b03f6c4a741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtproj62cQrc/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtprojwNYn6E/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
@@ -52,7 +52,7 @@
 		<false/>
 	</dict>
 	<key>EvaluatorFrame</key>
-	<string>1328 271 503 391 0 0 1920 1178 </string>
+	<string>1428 709 492 468 0 0 1920 1178 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -117,11 +117,7 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array>
-		<array>
-			<integer>0</integer>
-		</array>
-	</array>
+	<array/>
 	<key>Opened Steps</key>
 	<array>
 		<integer>4</integer>

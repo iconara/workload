@@ -85,7 +85,19 @@ function createWidgetController( preferencesController ) {
 		hideElement("loadingIndicator");
 	}
 	
-	var onModelError = function( ) {
+	var onModelError = function( e ) {
+		var errorString = e.userData.errorString == undefined
+		                ? e.message
+						: e.userData.errorString
+						;
+	
+		replaceChildNodes(
+			"errorMessage", 
+			P({}, localizedStrings["errorDataLoad"]),
+			P({}, createDOM("em", {}, localizedStrings["reportError"])),
+			P({}, TT({}, errorString))
+		);
+	
 		hideElement("loadingIndicator");
 		showElement("errorMessage");
 	}

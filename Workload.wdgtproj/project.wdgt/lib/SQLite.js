@@ -3,6 +3,7 @@ var SQLITE_SEPARATOR = "|";
 var SQLITE_NULLVALUE = "NULL";
 var SQLITE_ARGUMENTS = "-header -separator '" + SQLITE_SEPARATOR + "' -nullvalue '" + SQLITE_NULLVALUE + "'";
 var SENTINEL = "--end--";
+var TEMP_FILE_PATH = "/private/tmp/workload-sqlite-%identifier%.out";
 
 
 var createSQLite = function( databasePath ) {
@@ -16,17 +17,37 @@ var createSQLite = function( databasePath ) {
 	
 	var exec = function( sql ) {
 		var d = new Deferred();
-	
-		var command = SQLITE_PATH + " " + SQLITE_ARGUMENTS + " \"" + databasePath + "\" \"" + sql + "\" && echo '" + SENTINEL + "'";
 		
+		var tmpfile = TEMP_FILE_PATH.replace("%identifier%", widget.identifier);
+	
+		var command = SQLITE_PATH + " " + SQLITE_ARGUMENTS + " \"" + databasePath + "\" \"" + sql + "\" > " + tmpfile + " && echo '" + SENTINEL + "' >> " + tmpfile;
+		
+		// first filer: determine sqlite status and fetch the output
 		d.addCallback(function( sys ) {
-			if ( sys.status == 0 && sys.outputString.indexOf(SENTINEL) > -1 ) {
-				return sys.outputString.replace(SENTINEL + "\n", "");
+			if ( sys.status == 0 ) {
+				return doSimpleXMLHttpRequest("file://" + tmpfile);
 			} else {
-				throw new Error("Sentinel not found");
+				var e = new Error("There was an error while querying the database");
+				
+				e.userData = {
+					status: sys.status,
+					errorString: sys.errorString
+				}
+				
+				throw e;
 			}
 		});
 		
+		// second filter: get the sqlite output data from the request object
+		d.addCallback(function( response ) {
+			if ( response.responseText.indexOf(SENTINEL) > -1 ) {
+				return response.responseText.replace(SENTINEL, "");
+			} else {
+				throw new Error("Data truncated");
+			}
+		});
+		
+		// third filter: parse the sqlite output
 		d.addCallback(parseSQLiteOutput);
 		
 		widget.system(command, bind(d.callback, d));

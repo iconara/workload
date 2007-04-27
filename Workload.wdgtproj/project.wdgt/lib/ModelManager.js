@@ -1,4 +1,4 @@
-var RETRIES_ON_ERROR = 3;
+var RETRIES_ON_ERROR = 3; // TODO: may not be needed anymore
 
 var DURATION_BY_DATE_SQL = "" +
 	"SELECT SUM(endDateTime - startDateTime) AS duration, date(startDateTime + %referenceDate%, 'unixepoch') AS startDate " +
@@ -10,7 +10,7 @@ var DURATION_BY_DATE_SQL = "" +
 	"ORDER BY startDate " +
 	"";
 	
-var COCOA_REFERENCE_DATE = "978303600.000"; // Cocoa NSDate reference date: Jan 1, 2001
+var COCOA_REFERENCE_DATE = "978303600.000"; // Cocoa NSDate reference date (Jan 1, 2001) in the Unix epoch
 
 
 function createModelManager( databaseConnection, preferencesController ) {
@@ -33,7 +33,10 @@ function createModelManager( databaseConnection, preferencesController ) {
 	}
 	
 	var getData = function( ) {
-		var sql = DURATION_BY_DATE_SQL.replace(new RegExp("%referenceDate%", "g"), COCOA_REFERENCE_DATE);
+		var sql = DURATION_BY_DATE_SQL.replace(
+			new RegExp("%referenceDate%", "g"),
+			COCOA_REFERENCE_DATE
+		);
 	
 		var d = databaseConnection.query(sql);
 
@@ -47,7 +50,7 @@ function createModelManager( databaseConnection, preferencesController ) {
 		
 			getData();
 		} else {
-			signal(mm, "error");
+			signal(mm, "error", e);
 		}
 	}
 	
