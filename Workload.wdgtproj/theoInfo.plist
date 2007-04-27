@@ -29,11 +29,11 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>e0649b03f6c4a741</string>
+		<string>2bf968fc5dc5a741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtprojwNYn6E/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtprojoAgcX1/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>

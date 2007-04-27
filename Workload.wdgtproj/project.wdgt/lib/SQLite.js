@@ -18,7 +18,7 @@ var createSQLite = function( databasePath ) {
 	var exec = function( sql ) {
 		var d = new Deferred();
 		
-		var tmpfile = TEMP_FILE_PATH.replace("%identifier%", widget.identifier);
+		var tmpfile = TEMP_FILE_PATH.replace("%identifier%", widget.identifier + "-" + Math.floor(100 * Math.random()));
 	
 		var command = SQLITE_PATH + " " + SQLITE_ARGUMENTS + " \"" + databasePath + "\" \"" + sql + "\" > " + tmpfile + " && echo '" + SENTINEL + "' >> " + tmpfile;
 		
@@ -45,6 +45,8 @@ var createSQLite = function( databasePath ) {
 			} else {
 				throw new Error("Data truncated");
 			}
+			
+			widget.system("rm -f " + tmpfile, function( ) { });
 		});
 		
 		// third filter: parse the sqlite output

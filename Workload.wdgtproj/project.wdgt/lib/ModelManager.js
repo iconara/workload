@@ -1,15 +1,15 @@
-var RETRIES_ON_ERROR = 3; // TODO: may not be needed anymore
-
 var DURATION_BY_DATE_SQL = "" +
-	"SELECT SUM(endDateTime - startDateTime) AS duration, date(startDateTime + %referenceDate%, 'unixepoch') AS startDate " +
-	"FROM TimeEntry " +
+	"SELECT SUM(te.endDateTime - te.startDateTime) AS duration, date(te.startDateTime + %referenceDate%, 'unixepoch') AS startDate " +
+	"FROM TimeEntry te LEFT JOIN TimeSlip ts ON te.timeSlipID = ts.timeSlipID " +
 	"WHERE " + 
-	"	strftime('%s', endDateTime + %referenceDate%) < strftime('%s', 'now') " +
-	"	AND foreignAppUser IS NULL " +
+	"	1 = 1 " +
+	"	AND strftime('%s', te.endDateTime + %referenceDate%) < strftime('%s', 'now') " +
+	"	AND te.foreignAppUser IS NULL " +
+	"	AND ts.timeSlipID IS NOT NULL " +
 	"GROUP BY startDate " + 
 	"ORDER BY startDate " +
 	"";
-	
+		
 var COCOA_REFERENCE_DATE = "978303600.000"; // Cocoa NSDate reference date (Jan 1, 2001) in the Unix epoch
 
 
@@ -45,13 +45,7 @@ function createModelManager( databaseConnection, preferencesController ) {
 	}
 	
 	var onDataError = function( e ) {
-		if ( updateErrorCount < RETRIES_ON_ERROR ) {
-			updateErrorCount++;
-		
-			getData();
-		} else {
-			signal(mm, "error", e);
-		}
+		signal(mm, "error", e);
 	}
 	
 	var onData = function( result ) {
