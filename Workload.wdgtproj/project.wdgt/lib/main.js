@@ -1,3 +1,6 @@
+var BUILD_NUMBER = 4;
+
+
 var widgetController;
 var preferencesController;
 var backController;

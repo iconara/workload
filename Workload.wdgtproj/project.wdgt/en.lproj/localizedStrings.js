@@ -18,4 +18,4 @@ localizedStrings['twoMonths'] = 'Two months';
 localizedStrings['oneMonth'] = 'One month';
 localizedStrings['infoText'] = 'Developed by Theo Hultberg / Iconara.';
 localizedStrings['infoUrl'] = 'developer.iconara.net';
-localizedStrings['reportError'] = unescape('If this is a persistent error%2C please report it as a bug and quote the following error message:');
+localizedStrings['reportError'] = unescape('If this is a persistent error%2C or you belive it to be a bug%2C please click here to report it. The details will automatically be included.');

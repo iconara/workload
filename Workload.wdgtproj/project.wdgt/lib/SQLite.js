@@ -20,7 +20,9 @@ var createSQLite = function( databasePath ) {
 		
 		var tmpfile = TEMP_FILE_PATH.replace("%identifier%", widget.identifier + "-" + Math.floor(100 * Math.random()));
 	
-		var command = SQLITE_PATH + " " + SQLITE_ARGUMENTS + " \"" + databasePath + "\" \"" + sql + "\" > " + tmpfile + " && echo '" + SENTINEL + "' >> " + tmpfile;
+		var command = "" +
+			SQLITE_PATH + " " + SQLITE_ARGUMENTS + " \"" + databasePath + "\" \"" + sql + "\" > " + tmpfile + 
+			" && echo '" + SENTINEL + "' >> " + tmpfile;
 		
 		// first filer: determine sqlite status and fetch the output
 		d.addCallback(function( sys ) {
@@ -51,7 +53,7 @@ var createSQLite = function( databasePath ) {
 		
 		// third filter: parse the sqlite output
 		d.addCallback(parseSQLiteOutput);
-		
+				
 		widget.system(command, bind(d.callback, d));
 		
 		return d;

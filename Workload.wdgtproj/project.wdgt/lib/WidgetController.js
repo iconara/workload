@@ -4,8 +4,16 @@ var BILLINGS_DATABASE_PATH = "$HOME/Library/Application Support/Billings/Databas
 
 var MAX_HOURS_PER_DAY = 10;
 
+var BUG_REPORT_TO      = "theo@iconara.net";
+var BUG_REPORT_SUBJECT = "Workload bug report";
+var BUG_REPORT_BODY    = "" +
+	"If you like you may replace this text with a message\n\n" +
+	"-----------------------------------\n" +
+	"Build number: %buildNumber%\n" +
+	"Error message: \"%errorMessage%\"\n" +
+	"-----------------------------------\n" +
+	"\n";
 
-	
 
 function createWidgetController( preferencesController ) {
 	var wc = { };
@@ -86,17 +94,27 @@ function createWidgetController( preferencesController ) {
 	}
 	
 	var onModelError = function( e ) {
-		var errorString = e.userData.errorString == undefined
-		                ? e.message
-						: e.userData.errorString
-						;
+		var errorString = "";
+		
+		if ( e.userData != null && e.userData.errorString != null) {
+			errorString = e.userData.errorString;
+		} else {
+			errorString = e.message;
+		}
+	
+		var reportLink = A({href: "#"}, createDOM("em", {}, localizedStrings["reportError"]));
 	
 		replaceChildNodes(
 			"errorMessage", 
 			P({}, localizedStrings["errorDataLoad"]),
-			P({}, createDOM("em", {}, localizedStrings["reportError"])),
-			P({}, TT({}, errorString))
+			P({}, reportLink)
 		);
+		
+		connect(reportLink, "onclick", function( ) {
+			var bugReportBody = BUG_REPORT_BODY.replace("%buildNumber%", BUILD_NUMBER).replace("%errorMessage%", errorString);
+		
+			widget.openURL("mailto:" + BUG_REPORT_TO + "?subject=" + escape(BUG_REPORT_SUBJECT) + "&body=" + escape(bugReportBody));
+		});
 	
 		hideElement("loadingIndicator");
 		showElement("errorMessage");

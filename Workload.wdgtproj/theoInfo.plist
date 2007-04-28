@@ -20,8 +20,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {929, 294}}</string>
-			<string>{{0, 304}, {929, 769}}</string>
+			<string>{{0, 0}, {688, 185}}</string>
+			<string>{{0, 195}, {688, 578}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -29,30 +29,30 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>2bf968fc5dc5a741</string>
+		<string>1805e1cca6c7a741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtprojoAgcX1/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtprojCsmPTu/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>3</integer>
+		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.3984375</real>
+		<real>0.056249998509883881</real>
 		<key>percent-y</key>
-		<real>0.41249999403953552</real>
+		<real>0.28777778148651123</real>
 		<key>pos-x</key>
-		<integer>765</integer>
+		<integer>969</integer>
 		<key>pos-y</key>
-		<integer>495</integer>
+		<integer>259</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
 	<key>EvaluatorFrame</key>
-	<string>1428 709 492 468 0 0 1920 1178 </string>
+	<string>948 409 492 468 0 0 1440 878 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -63,12 +63,12 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {246, 1094}}</string>
-			<string>{{247, 0}, {930, 1094}}</string>
+			<string>{{0, 0}, {246, 794}}</string>
+			<string>{{247, 0}, {689, 794}}</string>
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>251 63 1176 1115 0 0 1920 1178 </string>
+	<string>251 63 935 815 0 0 1440 878 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -83,8 +83,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {248, 545}}</string>
-			<string>{{0, 555}, {248, 518}}</string>
+			<string>{{0, 0}, {248, 389}}</string>
+			<string>{{0, 399}, {248, 374}}</string>
 		</array>
 	</dict>
 	<key>Objects view expanded items</key>
@@ -117,7 +117,11 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array/>
+	<array>
+		<array>
+			<integer>2</integer>
+		</array>
+	</array>
 	<key>Opened Steps</key>
 	<array>
 		<integer>4</integer>
