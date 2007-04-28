@@ -1,19 +1,16 @@
-var BUILD_NUMBER = 4;
-
-
 var widgetController;
 var preferencesController;
 var backController;
 
 
 function main( ) {
-	backController = createBackController();
+	backController        = createBackController();
 	preferencesController = createPreferencesController();
-	widgetController = createWidgetController(preferencesController);
+	widgetController      = createWidgetController(preferencesController);
 
 	connect(widget, "show",      widgetController, widgetController.start);
 	connect(widget, "hide",      widgetController, widgetController.stop);
 	connect(widget, "showBack",  widgetController, widgetController.stop);
 	connect(widget, "showFront", widgetController, widgetController.start);
-	connect(widget, "showFront", preferencesController, preferencesController.update);
+	connect(widget, "showFront", preferencesController, preferencesController.update);	
 }

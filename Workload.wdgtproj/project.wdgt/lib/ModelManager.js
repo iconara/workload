@@ -1,5 +1,7 @@
 var DURATION_BY_DATE_SQL = "" +
-	"SELECT SUM(te.endDateTime - te.startDateTime) AS duration, date(te.startDateTime + %referenceDate%, 'unixepoch') AS startDate " +
+	"SELECT " +
+	"	SUM(te.endDateTime - te.startDateTime) AS duration, " +
+	"	date(te.startDateTime + %referenceDate%, 'unixepoch') AS startDate " +
 	"FROM TimeEntry te LEFT JOIN TimeSlip ts ON te.timeSlipID = ts.timeSlipID " +
 	"WHERE " + 
 	"	1 = 1 " +

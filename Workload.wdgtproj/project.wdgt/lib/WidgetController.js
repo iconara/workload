@@ -1,4 +1,8 @@
+var BUILD_NUMBER = 4;
+
 var UPDATE_INTERVAL = 1000 * 60 * 1;
+
+var VERSION_URL = "http://developer.iconara.net/products/Workload/version/";
 
 var BILLINGS_DATABASE_PATH = "$HOME/Library/Application Support/Billings/Database/billings.bid";
 
@@ -7,10 +11,12 @@ var MAX_HOURS_PER_DAY = 10;
 var BUG_REPORT_TO      = "theo@iconara.net";
 var BUG_REPORT_SUBJECT = "Workload bug report";
 var BUG_REPORT_BODY    = "" +
-	"If you like you may replace this text with a message\n\n" +
+	"If you like you may replace this text with a message. If you find that sending any of the information below to intrude on your privacy, please remove it (but please write that you have done so, so that I know it's not an error in the error reporting).\n\n" +
 	"-----------------------------------\n" +
 	"Build number: %buildNumber%\n" +
-	"Error message: \"%errorMessage%\"\n" +
+	"Error message: %errorMessage%\n" +
+	"Processor type: %processorType%\n" +
+	"OS version: %osVersion%\n" + 
 	"-----------------------------------\n" +
 	"\n";
 
@@ -22,6 +28,8 @@ function createWidgetController( preferencesController ) {
 	var updateInterval = null;
 	
 	var modelManager;
+	
+	var versionManager;
 	
 	var chart;
 	
@@ -42,6 +50,10 @@ function createWidgetController( preferencesController ) {
 			connect(modelManager, "error",  onModelError);
 
 			chart = createChart(getElement("chart"), MAX_HOURS_PER_DAY);
+			
+			versionManager = createVersionManager(VERSION_URL, BUILD_NUMBER);
+			
+			connect(versionManager, "update", onNewVersionAvailable);
 		} else {
 			inErrorState = true;
 			
@@ -66,6 +78,8 @@ function createWidgetController( preferencesController ) {
 				updateInterval = setInterval(update, UPDATE_INTERVAL);
 						
 				update();
+				
+				versionManager.check();
 			} else {
 				//throw new Error("The controller has already been started");
 			}
@@ -110,14 +124,41 @@ function createWidgetController( preferencesController ) {
 			P({}, reportLink)
 		);
 		
-		connect(reportLink, "onclick", function( ) {
-			var bugReportBody = BUG_REPORT_BODY.replace("%buildNumber%", BUILD_NUMBER).replace("%errorMessage%", errorString);
-		
-			widget.openURL("mailto:" + BUG_REPORT_TO + "?subject=" + escape(BUG_REPORT_SUBJECT) + "&body=" + escape(bugReportBody));
-		});
+		connect(reportLink, "onclick", partial(sendErrorReport, errorString));
 	
 		hideElement("loadingIndicator");
 		showElement("errorMessage");
+	}
+	
+	var sendErrorReport = function( errorString ) {
+		var processorType;
+		var osVersion;
+		
+		try {
+			processorType = widget.system("system_profiler SPHardwareDataType | grep 'Processor Name'", null).outputString.replace(/Processor Name:\s*(.*)\s*$/, "$1");
+			osVersion = widget.system("system_profiler SPSoftwareDataType | grep 'System Version'", null).outputString.replace(/System Version:\s*(.*)\s*$/, "$1");
+		} catch ( e ) {
+			processorType = "(error)";
+			osVersion     = "(error)";
+		}
+	
+		var bugReportBody =
+			BUG_REPORT_BODY
+			.replace("%buildNumber%", BUILD_NUMBER)
+			.replace("%errorMessage%", errorString)
+			.replace("%processorType%", processorType)
+			.replace("%osVersion%", osVersion)
+		;
+		
+		widget.openURL(
+			"mailto:" + BUG_REPORT_TO + 
+			"?subject=" + escape(BUG_REPORT_SUBJECT) + 
+			"&body=" + escape(bugReportBody)
+		);
+	}
+	
+	var onNewVersionAvailable = function( url ) {
+		url;
 	}
 	
 	var updateWeekChart = function( ) {

@@ -20,9 +20,7 @@ var createSQLite = function( databasePath ) {
 		
 		var tmpfile = TEMP_FILE_PATH.replace("%identifier%", widget.identifier + "-" + Math.floor(100 * Math.random()));
 	
-		var command = "" +
-			SQLITE_PATH + " " + SQLITE_ARGUMENTS + " \"" + databasePath + "\" \"" + sql + "\" > " + tmpfile + 
-			" && echo '" + SENTINEL + "' >> " + tmpfile;
+		var command = SQLITE_PATH + " " + SQLITE_ARGUMENTS + " \"" + databasePath + "\" \"" + sql + "\" > " + tmpfile + " && echo '" + SENTINEL + "' >> " + tmpfile;
 		
 		// first filer: determine sqlite status and fetch the output
 		d.addCallback(function( sys ) {
@@ -54,7 +52,11 @@ var createSQLite = function( databasePath ) {
 		// third filter: parse the sqlite output
 		d.addCallback(parseSQLiteOutput);
 				
-		widget.system(command, bind(d.callback, d));
+		var cmd = widget.system(command, bind(d.callback, d));
+		
+		cmd.onreadoutput = function( str ) {
+			output += str;
+		}
 		
 		return d;
 	}
@@ -63,8 +65,8 @@ var createSQLite = function( databasePath ) {
 		var lines = output.split("\n");
 		
 		var header = lines.shift().split(SQLITE_SEPARATOR);
-		
-		lines.pop(); // last line is empty, remove it
+	
+		lines = filter(function( line ) { return line.indexOf(SQLITE_SEPARATOR) > -1; }, lines);
 	
 		var data = map(
 			function( line ) {

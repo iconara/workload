@@ -3,7 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>Breakpoints</key>
-	<dict/>
+	<dict>
+		<key>lib/UpdateManager.js:12</key>
+		<string>check</string>
+		<key>lib/WidgetController.js:161</key>
+		<string>onNewVersionAvailable</string>
+	</dict>
 	<key>CYBreakOnException</key>
 	<false/>
 	<key>ContentSplitViewGeometry</key>
@@ -20,8 +25,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {688, 185}}</string>
-			<string>{{0, 195}, {688, 578}}</string>
+			<string>{{0, 0}, {771, 291}}</string>
+			<string>{{0, 301}, {771, 472}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -29,25 +34,25 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>1805e1cca6c7a741</string>
+		<string>e88305aaebc7a741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtprojCsmPTu/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtprojoMrjsr/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>2</integer>
+		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.056249998509883881</real>
+		<real>0.069444447755813599</real>
 		<key>percent-y</key>
-		<real>0.28777778148651123</real>
+		<real>0.18111111223697662</real>
 		<key>pos-x</key>
-		<integer>969</integer>
+		<integer>950</integer>
 		<key>pos-y</key>
-		<integer>259</integer>
+		<integer>527</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -64,11 +69,11 @@
 		<key>sizes</key>
 		<array>
 			<string>{{0, 0}, {246, 794}}</string>
-			<string>{{247, 0}, {689, 794}}</string>
+			<string>{{247, 0}, {772, 794}}</string>
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>251 63 935 815 0 0 1440 878 </string>
+	<string>251 63 1018 815 0 0 1440 878 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
