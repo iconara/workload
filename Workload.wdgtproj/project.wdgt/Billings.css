@@ -62,20 +62,6 @@ body {
 	height: 200px;
 }
 
-#chart {
-	position: absolute;
-	right: 20px;
-	bottom: 38px;
-	max-width: none;
-	max-height: none;
-	min-width: 350px;
-	min-height: 150px;
-	height: 42px !important;
-	width: 341px !important;
-	top: 23px;
-	left: 24px;
-}
-
 #goalHours {
 	position: absolute;
 	color: black;
@@ -229,15 +215,6 @@ body {
 	display: none;
 }
 
-#chartBg {
-	position: absolute;
-	width: 343px;
-	height: 145px;
-	max-width: none;
-	top: 23px;
-	left: 23px;
-}
-
 #dayNames {
 	position: absolute;
 	border-color: black;
@@ -309,5 +286,20 @@ body {
 	height: 13px;
 	left: 56px;
 	top: 174px;
+}
+
+#chart {
+	position: absolute;
+	top: 23px;
+	left: 23px;
+	width: 340px;
+	height: 140px;
+}
+
+#sheet {
+	position: absolute;
+	max-width: none;
+	left: 80px;
+	top: 18px;
 }
 

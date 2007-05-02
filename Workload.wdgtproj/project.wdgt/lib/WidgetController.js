@@ -92,7 +92,7 @@ function createWidgetController( preferencesController ) {
 		updateInterval = null;
 	}
 		
-	var update = function( ) {
+	var update = function( ) {	
 		showElement("loadingIndicator");
 		hideElement("errorMessage");
 
@@ -103,8 +103,6 @@ function createWidgetController( preferencesController ) {
 	
 	var onModelUpdated = function( ) {
 		updateWeekChart();
-
-		hideElement("loadingIndicator");
 	}
 	
 	var onModelError = function( e ) {

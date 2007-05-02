@@ -10,3 +10,42 @@ a:hover {
 .shadowed-text {
 	text-shadow: rgb(0, 0, 0) 0px 1px 2px;
 }
+
+#chart {
+	border: 1px solid rgb(50, 50, 50);
+}
+
+.sheet {
+	width: 230px;
+}
+
+.sheetTop {
+	margin: 0;
+	background: url("../Images/sheet/top.png") no-repeat;
+	width: 230px;
+	height: 4px;
+}
+
+.sheetBottom {
+	margin: 0;
+	background: url("../Images/sheet/bottom.png") no-repeat;
+	width: 230px;
+	height: 14px;
+}
+
+.sheetMiddle {
+	margin: 0;
+	background: url("../Images/sheet/middle.png") repeat-y;
+	width: 230px;
+}
+
+.sheetContents {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-family: Helvetica Neue;
+	text-align: center;
+	font-size: 8pt;
+	color: rgb(230, 230, 230);
+}

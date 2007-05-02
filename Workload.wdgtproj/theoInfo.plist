@@ -6,7 +6,7 @@
 	<dict>
 		<key>lib/UpdateManager.js:12</key>
 		<string>check</string>
-		<key>lib/WidgetController.js:161</key>
+		<key>lib/WidgetController.js:159</key>
 		<string>onNewVersionAvailable</string>
 	</dict>
 	<key>CYBreakOnException</key>
@@ -25,8 +25,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {771, 291}}</string>
-			<string>{{0, 301}, {771, 472}}</string>
+			<string>{{0, 0}, {782, 393}}</string>
+			<string>{{0, 403}, {782, 670}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -34,11 +34,11 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>637fe155ecd0a741</string>
+		<string>2e3b341387d1a741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtproj5Haluj/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtprojzGJGJc/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
@@ -46,13 +46,13 @@
 		<key>percent-type</key>
 		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.3984375</real>
+		<real>0.19218750298023224</real>
 		<key>percent-y</key>
-		<real>0.41249999403953552</real>
+		<real>0.37000000476837158</real>
 		<key>pos-x</key>
-		<integer>765</integer>
+		<integer>1161</integer>
 		<key>pos-y</key>
-		<integer>495</integer>
+		<integer>546</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -68,12 +68,12 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {246, 794}}</string>
-			<string>{{247, 0}, {772, 794}}</string>
+			<string>{{0, 0}, {246, 1094}}</string>
+			<string>{{247, 0}, {783, 1094}}</string>
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>536 363 1018 815 0 0 1920 1178 </string>
+	<string>251 63 1029 1115 0 0 1920 1178 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -88,8 +88,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {248, 389}}</string>
-			<string>{{0, 399}, {248, 374}}</string>
+			<string>{{0, 0}, {248, 541}}</string>
+			<string>{{0, 551}, {248, 522}}</string>
 		</array>
 	</dict>
 	<key>Objects view expanded items</key>
@@ -120,11 +120,18 @@
 			<integer>1</integer>
 			<integer>9</integer>
 		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>6</integer>
+		</array>
 	</array>
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>2</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>6</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>

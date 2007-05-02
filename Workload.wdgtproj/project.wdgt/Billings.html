@@ -10,6 +10,7 @@
 	
 	<script type="text/javascript" src="lib/util.js" charset="utf-8"></script>
 	<script type="text/javascript" src="lib/Chart.js" charset="utf-8"></script>
+	<script type="text/javascript" src="lib/Sheet.js" charset="utf-8"></script>
 	<script type="text/javascript" src="lib/SQLite.js" charset="utf-8"></script>
 	<script type="text/javascript" src="lib/VersionManager.js" charset="utf-8"></script>
 	<script type="text/javascript" src="lib/ModelManager.js" charset="utf-8"></script>
@@ -35,12 +36,14 @@
 	<div id="front">
 		
 		<img src="Images/front 1.png" id="img">
-	<img src="Images/chart 1.png" id="chartBg">
+	
+	
+	<canvas apple-part="com.apple.Dashcode.part.canvas" class="apple-canvas apple-no-children" width="340" height="140" id="chart" apple-group="canvas"></canvas>
 	<div class="apple-no-children" id="info" apple-part="com.apple.Dashcode.part.infobutton" apple-default-image-visibility="hidden"></div>
         
     
 	
-	<canvas apple-part="com.apple.Dashcode.part.canvas" class="apple-canvas apple-no-children" width="341" height="143" id="chart" apple-group="canvas"></canvas>
+	
 	<div id="dayNames" apple-group="box" style="">
 		<div apple-part="com.apple.Dashcode.part.text" class="shadowed-text apple-text apple-no-children" apple-default-image-visibility="hidden" id="day0" apple-group="text2"></div>
 	<div apple-part="com.apple.Dashcode.part.text" class="shadowed-text apple-text apple-no-children" apple-default-image-visibility="hidden" id="day1" apple-group="text2"></div>
@@ -56,7 +59,11 @@
 	<div apple-part="com.apple.Dashcode.part.text" class="shadowed-text apple-text apple-no-children" apple-default-image-visibility="hidden" id="errorMessage" apple-group="text9"></div>
 	
 	
+	<div id="sheet" class="sheet"></div>
+	
+	
 	</div>
+	
     <div id="back">
 	   <img id="backImg" src="Images/back.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.backimage" apple-style=" image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.1500,0.1500,0.1500; image-border-width: 3; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
     	
