@@ -1,4 +1,4 @@
-var BUILD_NUMBER = 4;
+var BUILD_NUMBER = 6;
 
 var UPDATE_INTERVAL = 1000 * 60 * 1;
 

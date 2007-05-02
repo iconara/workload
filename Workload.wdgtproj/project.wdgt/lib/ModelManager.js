@@ -5,7 +5,7 @@ var DURATION_BY_DATE_SQL = "" +
 	"FROM TimeEntry te LEFT JOIN TimeSlip ts ON te.timeSlipID = ts.timeSlipID " +
 	"WHERE " + 
 	"	1 = 1 " +
-	"	AND strftime('%s', te.endDateTime + %referenceDate%) < strftime('%s', 'now') " +
+//	"	AND strftime('%s', te.endDateTime + %referenceDate%) < strftime('%s', 'now') " + // doesn't work on PPC
 	"	AND te.foreignAppUser IS NULL " +
 	"	AND ts.timeSlipID IS NOT NULL " +
 	"GROUP BY startDate " + 

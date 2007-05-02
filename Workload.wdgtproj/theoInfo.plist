@@ -34,11 +34,11 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>e88305aaebc7a741</string>
+		<string>637fe155ecd0a741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtprojoMrjsr/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtproj5Haluj/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
@@ -46,18 +46,18 @@
 		<key>percent-type</key>
 		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.069444447755813599</real>
+		<real>0.3984375</real>
 		<key>percent-y</key>
-		<real>0.18111111223697662</real>
+		<real>0.41249999403953552</real>
 		<key>pos-x</key>
-		<integer>950</integer>
+		<integer>765</integer>
 		<key>pos-y</key>
-		<integer>527</integer>
+		<integer>495</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
 	<key>EvaluatorFrame</key>
-	<string>948 409 492 468 0 0 1440 878 </string>
+	<string>1428 708 492 468 0 0 1920 1178 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -73,7 +73,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>251 63 1018 815 0 0 1440 878 </string>
+	<string>536 363 1018 815 0 0 1920 1178 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
