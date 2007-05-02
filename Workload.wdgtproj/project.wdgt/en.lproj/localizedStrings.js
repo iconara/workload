@@ -19,3 +19,4 @@ localizedStrings['oneMonth'] = 'One month';
 localizedStrings['infoText'] = 'Developed by Theo Hultberg / Iconara.';
 localizedStrings['infoUrl'] = 'developer.iconara.net';
 localizedStrings['reportError'] = unescape('If this is a persistent error%2C or you belive it to be a bug%2C please click here to report it. The relevant details will automatically be included.');
+localizedStrings['newVersionAvailable'] = unescape('There is a new version available%2C click here to download %u2192');

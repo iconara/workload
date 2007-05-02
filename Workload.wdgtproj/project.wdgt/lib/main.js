@@ -13,6 +13,4 @@ function main( ) {
 	connect(widget, "showBack",  widgetController, widgetController.stop);
 	connect(widget, "showFront", widgetController, widgetController.start);
 	connect(widget, "showFront", preferencesController, preferencesController.update);
-	
-	createSheet("sheet");
 }

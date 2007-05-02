@@ -19,27 +19,27 @@ a:hover {
 	width: 230px;
 }
 
-.sheetTop {
+.sheet .sheetTop {
 	margin: 0;
 	background: url("../Images/sheet/top.png") no-repeat;
 	width: 230px;
 	height: 4px;
 }
 
-.sheetBottom {
+.sheet .sheetBottom {
 	margin: 0;
 	background: url("../Images/sheet/bottom.png") no-repeat;
 	width: 230px;
 	height: 14px;
 }
 
-.sheetMiddle {
+.sheet .sheetMiddle {
 	margin: 0;
 	background: url("../Images/sheet/middle.png") repeat-y;
 	width: 230px;
 }
 
-.sheetContents {
+.sheet .sheetContents {
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 5px;
@@ -48,4 +48,16 @@ a:hover {
 	text-align: center;
 	font-size: 8pt;
 	color: rgb(230, 230, 230);
+}
+
+.sheet .closeX {
+	position: relative;
+	top: -21px;
+	left: 212px;
+	
+	opacity: 0.2;
+}
+
+.sheet .closeX:hover {
+	opacity: 0.7;
 }

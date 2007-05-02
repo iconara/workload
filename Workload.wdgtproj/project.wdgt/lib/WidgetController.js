@@ -33,6 +33,8 @@ function createWidgetController( preferencesController ) {
 	
 	var chart;
 	
+	var sheet;
+	
 	var updateErrorCount;
 	
 	var inErrorState;
@@ -50,6 +52,8 @@ function createWidgetController( preferencesController ) {
 			connect(modelManager, "error",  onModelError);
 
 			chart = createChart(getElement("chart"), MAX_HOURS_PER_DAY);
+			
+			sheet = createSheet(getElement("sheet"));
 			
 			versionManager = createVersionManager(VERSION_URL, BUILD_NUMBER);
 			
@@ -103,6 +107,8 @@ function createWidgetController( preferencesController ) {
 	
 	var onModelUpdated = function( ) {
 		updateWeekChart();
+		
+		hideElement("loadingIndicator");
 	}
 	
 	var onModelError = function( e ) {
@@ -116,16 +122,19 @@ function createWidgetController( preferencesController ) {
 	
 		var reportLink = A({href: "#"}, createDOM("em", {}, localizedStrings["reportError"]));
 	
-		replaceChildNodes(
-			"errorMessage", 
+		sheet.setContents([
 			P({}, localizedStrings["errorDataLoad"]),
 			P({}, reportLink)
-		);
-		
-		connect(reportLink, "onclick", partial(sendErrorReport, errorString));
+		]);
+		sheet.setVisible(true);
+	
+		connect(reportLink, "onclick", function( ) {
+			sendErrorReport(errorString);
+			
+			sheet.setVisible(false);
+		});
 	
 		hideElement("loadingIndicator");
-		showElement("errorMessage");
 	}
 	
 	var sendErrorReport = function( errorString ) {
@@ -155,8 +164,17 @@ function createWidgetController( preferencesController ) {
 		);
 	}
 	
-	var onNewVersionAvailable = function( url ) {
-		url;
+	var onNewVersionAvailable = function( url ) {		
+		var downloadLink = A({href: "#"}, localizedStrings["newVersionAvailable"]);
+		
+		sheet.setContents(downloadLink);
+		sheet.setVisible(true);
+		
+		connect(downloadLink, "onclick", function( ) {
+			sheet.setVisible(false);
+			
+			widget.openURL(url); return false;
+		});
 	}
 	
 	var updateWeekChart = function( ) {
