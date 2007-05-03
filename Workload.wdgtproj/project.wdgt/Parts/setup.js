@@ -6,7 +6,6 @@ function setupParts() {
     CreateInfoButton('info', { frontID: 'front', foregroundStyle: 'white', backgroundStyle: 'black', onclick: 'showBack' });
     CreateGlassButton('done', { text: 'Done', onclick: 'showFront' });
     CreateText('hoursLabel', { text: 'hoursLabel' });
-    CreateText('infoText', { text: 'infoText' });
     CreateText('loadingIndicator', { text: 'loadingMessage' });
     CreateText('errorMessage', { text: 'errorDataLoad' });
     CreateText('day0', { text: 'X' });
@@ -18,5 +17,6 @@ function setupParts() {
     CreateText('day6', { text: 'X' });
     CreateOvalShape('todayBg', {  });
     CreateText('infoUrl', { text: 'infoUrl' });
+    CreateText('infoText', { text: 'infoText' });
 }
 window.addEventListener('load', setupParts, false);

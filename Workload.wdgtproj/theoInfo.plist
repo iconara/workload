@@ -6,6 +6,8 @@
 	<dict>
 		<key>lib/UpdateManager.js:12</key>
 		<string>check</string>
+		<key>lib/VersionManager.js:13</key>
+		<string>init</string>
 	</dict>
 	<key>CYBreakOnException</key>
 	<false/>
@@ -14,7 +16,7 @@
 		<key>ContentSplitViewConfig</key>
 		<integer>8</integer>
 		<key>SplitViewConfig</key>
-		<integer>0</integer>
+		<integer>3</integer>
 		<key>_collapsingFrameDimension</key>
 		<real>0.0</real>
 		<key>_indexOfCollapsedView</key>
@@ -23,20 +25,20 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {782, 244}}</string>
-			<string>{{0, 254}, {782, 519}}</string>
+			<string>{{0, 0}, {782, 371}}</string>
+			<string>{{0, 381}, {782, 392}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>4</integer>
+	<integer>0</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>a5dcbdacb7d1a741</string>
+		<string>7b6a6d5b92d4a741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtprojse1CPM/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtproj5KZIeD/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
@@ -44,13 +46,13 @@
 		<key>percent-type</key>
 		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.24861110746860504</real>
+		<real>0.27847221493721008</real>
 		<key>percent-y</key>
-		<real>0.27888888120651245</real>
+		<real>0.13333334028720856</real>
 		<key>pos-x</key>
-		<integer>692</integer>
+		<integer>649</integer>
 		<key>pos-y</key>
-		<integer>439</integer>
+		<integer>570</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -127,7 +129,7 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>4</integer>
+			<integer>2</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>

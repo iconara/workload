@@ -99,6 +99,15 @@
 						<h2>Changelog</h2>
 						<p>
 							<dl>
+								<!--
+								<dt>1.0b7 (2007-05-XX)</dt>
+								<dd>
+									<ul>
+										<li>Slight change to the icon</li>
+									</ul>
+								</dd>
+								-->
+								
 								<dt>1.0b6 (2007-05-02)</dt>
 								<dd>
 									<ul>
@@ -148,7 +157,7 @@
 						
 						<h2>Details for geeks</h2>
 						<p>
-							The widget was built using <a href="http://developer.apple.com/tools/dashcode">Dashcode</a> (excellent debugger, buggy and crappy in most other respects, violently Subversion unfriendly) and <a href="http://www.macromates.com/textmate">TextMate</a> (excellent in all ways possible, unfortunately it can't play with Dashcode, because Dashcode is the mean kid on the street and hates everybody else). <a href="http://www.mochikit.com/">MochiKit</a> (excellent to the same degree as TextMate) provides insulation from the boring bits. The widget also contains a univeral binary of <a href="http://www.sqlite.org/">SQLite</a> 3.3.15, which is used to retrieve the data from Billings.
+							The widget was built using <a href="http://developer.apple.com/tools/dashcode">Dashcode</a> (excellent debugger, buggy and crappy in most other respects, violently Subversion unfriendly) and <a href="http://www.macromates.com">TextMate</a> (excellent in all ways possible, unfortunately it can't play with Dashcode, because Dashcode is the mean kid on the street and hates everybody else). <a href="http://www.mochikit.com/">MochiKit</a> (excellent to the same degree as TextMate) provides insulation from the boring bits. The widget also contains a univeral binary of <a href="http://www.sqlite.org/">SQLite</a> 3.3.15, which is used to retrieve the data from Billings.
 						</p>
 
 					</div>
@@ -178,7 +187,14 @@
 						<p>
 							<small>	The usual widget installation instructions applies: if you haven't set your web browser to automatically open downloaded files, just double click the zip-file and then double click the "Workload.wdgt" file that is extracted from it. The system should now ask you if you want to install the widget, click ok as many times as it takes.</small>
 						</p>
-
+					</li>
+					<li>
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but21.gif" border="0" name="submit" alt="Donate with PayPal">
+							<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+							<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+						</form>
 					</li>
 				</ul>
 			</div>

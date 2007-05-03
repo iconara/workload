@@ -13,8 +13,6 @@ function createBackController( ) {
 		connect("showAveragesLabel", "onclick", createBoxClicker("showAverages"));
 		connect("weekendGoalLabel",  "onclick", createBoxClicker("weekendGoal"));
 	
-		connect("infoUrl", "onclick", function( ) { widget.openURL("http://developer.iconara.net/"); });
-	
 		replaceChildNodes(
 			"averageSource",
 			OPTION({"value": "forever"},   localizedStrings["forever"]),
@@ -23,7 +21,13 @@ function createBackController( ) {
 			OPTION({"value": "twoMonths"}, localizedStrings["twoMonths"]),
 			OPTION({"value": "oneMonth"},  localizedStrings["oneMonth"])
 		);
-
+		
+		replaceChildNodes("infoText", "v1.0b" + BUILD_NUMBER + " " + scrapeText("infoText"));
+		
+		replaceChildNodes("infoUrl", A({href: "#"}, scrapeText("infoUrl")));
+		
+		connect("infoUrl", "onclick", goToHomepage);
+		connect("iconara", "onclick", goToHomepage);
 	
 		return bc;
 	}
@@ -48,6 +52,10 @@ function createBackController( ) {
 				signal(box, "onchange");
 			}
 		}
+	}
+	
+	var goToHomepage = function( ) {
+		widget.openURL("http://developer.iconara.net/");
 	}
 	
 	return init();
