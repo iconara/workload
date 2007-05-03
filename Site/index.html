@@ -37,16 +37,6 @@
 						<p>
 							<strong>The widget requires Billings 2.5.</strong>
 						</p>
-						<p>
-							I have no affiliation with Marketcircle nor is this widget blessed by them in any way. The widget is stable but not thoroughly tested on different systems, so use at your own risk. However, it doesn't change the Billings database so you should be safe.
-						</p>
-						<h2>Download &amp; install</h2>
-						<p>
-							<a href="Workload.wdgt.zip"><img src="images/icon.png" width="80" height="80" alt="Workload" border="0" valign="middle" /></a> <a href="Workload.wdgt.zip">Workload.wdgt.zip &#x2192;</a>
-						</p>
-						<p>
-							The usual widget installation instructions applies: if you haven't set your web browser to automatically open downloaded files, just double click the zip-file and then double click the "Workload.wdgt" file that is extracted from it. The system should now ask you if you want to install the widget, click ok as many times as it takes.
-							</p>
 						<h2>Explanation</h2>
 						<p>
 							Each column represents a day, where the rightmost column is today. If you haven't guessed at this point, the letters below the columns means "Saturday", "Sunday", "Monday", etc.
@@ -91,7 +81,7 @@
 								<strike>If you import slips from other people into your database Workload will display that data as though it was you who had worked those hours. In Billings 2.5 it is possible to see that data came from another user, and I will add a check for that as soon as possible. (Thanks to Marketcircle for mentioning this.)</strike>. <em>This has been fixed.</em>
 							</li>
 							<li>
-								You can only see approximately how much you've worked each day since there is no scale on the chart, however that is partly intentional. Workload is only meant to provide a quick overview, so exactness hasn't been a goal. You can compare the height of the bars with the height of the goal for comparison. In a future version I will probably include some kind of scale on the chart.
+								<strike>You can only see approximately how much you've worked each day since there is no scale on the chart, however that is partly intentional. Workload is only meant to provide a quick overview, so exactness hasn't been a goal. You can compare the height of the bars with the height of the goal for comparison. In a future version I will probably include some kind of scale on the chart.</strike> <em>There is now a proper grid.</em>
 							</li>
 							<li>
 								<strike>The widget requires an Intel Mac. This is really silly and shouldn't be so. The reason is that it uses a newer version of <code>sqlite</code>, which I have compiled myself. I'm not sure how to compile it for both PPC and Intel right now, but I'll try my best.</strike> <em>This has been fixed.</em>
@@ -106,6 +96,60 @@
 							It was brought to my attention that you can script Billings with <a href="http://www.fscript.org/">F-Script</a>, and I'm looking into that at the moment. Perhaps I will create something similar to Workload but as a Billings plug-in.
 						</p>
 
+						<h2>Changelog</h2>
+						<p>
+							<dl>
+								<dt>1.0b6 (2007-05-02)</dt>
+								<dd>
+									<ul>
+										<li>The chart has now a proper grid</li>
+										<li>The widget now notifies you when a new version is available</li>
+										<li>Cosmetic updates (e.g. sheet panel for messages)</li>
+									</ul>
+								</dd>
+
+								<dt>1.0b5 (2007-05-02)</dt>
+								<dd>
+									<ul>
+										<li>PPC compatibility, finally</li>
+									</ul>
+								</dd>
+								
+								<dt>1.0b4 (2007-04-28)</dt>
+								<dd>
+									<ul>
+										<li>Built-in bug reporting</li>
+										<li>Fixed average calculation (broken by b3)</li>
+									</ul>
+								</dd>
+								
+								<dt>1.0b3 (2007-04-27)</dt>
+								<dd>
+									<ul>
+										<li>Universal SQLite binary</li>
+									</ul>
+								</dd>
+								
+								<dt>1.0b2 (2007-04-26)</dt>
+								<dd>
+									<ul>
+										<li>Public beta test</li>
+									</ul>
+								</dd>
+								
+								<dt>1.0b1 (2007-04-20)</dt>
+								<dd>
+									<ul>
+										<li>Initial version</li>
+									</ul>
+								</dd>
+							</dl>
+						</p>
+						
+						<h2>Details for geeks</h2>
+						<p>
+							The widget was built using <a href="http://developer.apple.com/tools/dashcode">Dashcode</a> (excellent debugger, buggy and crappy in most other respects, violently Subversion unfriendly) and <a href="http://www.macromates.com/textmate">TextMate</a> (excellent in all ways possible, unfortunately it can't play with Dashcode, because Dashcode is the mean kid on the street and hates everybody else). <a href="http://www.mochikit.com/">MochiKit</a> (excellent to the same degree as TextMate) provides insulation from the boring bits. The widget also contains a univeral binary of <a href="http://www.sqlite.org/">SQLite</a> 3.3.15, which is used to retrieve the data from Billings.
+						</p>
 
 					</div>
 				</div>
@@ -116,8 +160,11 @@
 					<li>
 						<h2>Download</h2>
 						<p>
-							<a href="Workload.wdgt.zip"><img src="images/icon.png" width="80" height="80" alt="Workload" border="0" /></a><br/>
-							<a href="Workload.wdgt.zip">Workload.wdgt.zip</a>
+							<a href="Workload-1.0b6.wdgt.zip"><img src="images/icon.png" width="80" height="80" alt="Workload" border="0" /></a><br/>
+							<a href="Workload-1.0b6.wdgt.zip">Download Workload 1.0b6 &#x2192;</a>
+						</p>
+						<p>
+							<small><a href="http://www.billingsapp.com/">Billings 2.5</a> required.</small>
 						</p>
 					</li>
 					<li>
@@ -125,6 +172,13 @@
 						<p>
 							Any bug reports, comments or questions are welcome. Don't hesitate to mail me at <a href="mailto:&#116;&#104;&#101;&#111;&#064;&#105;&#099;&#111;&#110;&#097;&#114;&#097;&#046;&#110;&#101;&#116;">&#116;&#104;&#101;&#111;&#064;&#105;&#099;&#111;&#110;&#097;&#114;&#097;&#046;&#110;&#101;&#116;</a>.
 						</p>
+						<p>
+							<small>I have no affiliation with Marketcircle nor is this widget blessed by them in any way (although they do like it). The widget is stable and seems to work on different systems, but use at your own risk. A backup is always a good idea. The widget doesn't change the Billings database there's not much that can go wrong.</small>
+						</p>
+						<p>
+							<small>	The usual widget installation instructions applies: if you haven't set your web browser to automatically open downloaded files, just double click the zip-file and then double click the "Workload.wdgt" file that is extracted from it. The system should now ask you if you want to install the widget, click ok as many times as it takes.</small>
+						</p>
+
 					</li>
 				</ul>
 			</div>

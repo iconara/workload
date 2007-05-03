@@ -14,7 +14,7 @@
 		<key>ContentSplitViewConfig</key>
 		<integer>8</integer>
 		<key>SplitViewConfig</key>
-		<integer>3</integer>
+		<integer>0</integer>
 		<key>_collapsingFrameDimension</key>
 		<real>0.0</real>
 		<key>_indexOfCollapsedView</key>
@@ -28,7 +28,7 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>0</integer>
+	<integer>4</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
@@ -127,7 +127,7 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>2</integer>
+			<integer>4</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>
