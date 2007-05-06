@@ -5,7 +5,7 @@
 	<key>CYBackwardCompatibleExport</key>
 	<false/>
 	<key>IsInCodeGeneratorMode</key>
-	<false/>
+	<true/>
 	<key>Steps</key>
 	<array>
 		<dict>

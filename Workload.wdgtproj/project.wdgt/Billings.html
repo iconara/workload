@@ -79,7 +79,7 @@
 </div>
     
     
-    <input type="text" value="8" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="goalHours" apple-group="textfield">
+    
     <div apple-part="com.apple.Dashcode.part.text" class="shadowed-text apple-text apple-no-children" apple-default-image-visibility="hidden" id="hoursLabel" apple-group="text"></div>
     <div apple-part="com.apple.Dashcode.part.checkboxbutton" id="showAveragesPart" apple-group="checkboxbutton">
 	<input type="checkbox" name="showAverages" checked="" apple-group="checkboxbutton" id="showAverages">
@@ -93,6 +93,10 @@
     <div class="shadowed-text" id="infoText">Developed by Theo Hultberg / Iconara.</div>
 	
     <div class="shadowed-text" id="infoUrl">http://developer.iconara.net</div>
+    
+	
+    <input apple-part="com.apple.Dashcode.part.slider" id="goalHours" type="range" min="0" value="8" max="10" apple-group="slider" onselect="sliderUpdated(event);">
+	
     
 	
     </div>

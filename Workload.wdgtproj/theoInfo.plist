@@ -32,11 +32,11 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>82fd5713a5dca741</string>
+		<string>ccd4e47fd3dca741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtproj8YQpJC/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtprojxe44zT/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
@@ -44,13 +44,13 @@
 		<key>percent-type</key>
 		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.067708335816860199</real>
+		<real>0.02708333358168602</real>
 		<key>percent-y</key>
-		<real>0.37999999523162842</real>
+		<real>0.078333333134651184</real>
 		<key>pos-x</key>
-		<integer>1400</integer>
+		<integer>1478</integer>
 		<key>pos-y</key>
-		<integer>534</integer>
+		<integer>896</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -125,7 +125,11 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array/>
+	<array>
+		<array>
+			<integer>2</integer>
+		</array>
+	</array>
 	<key>Opened Steps</key>
 	<array>
 		<integer>4</integer>

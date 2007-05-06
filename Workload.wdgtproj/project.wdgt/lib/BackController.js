@@ -5,9 +5,10 @@ function createBackController( versionManager ) {
 	var init = function( ) {
 		connect("showGoal",      "onchange", update);
 		connect("weekendGoal",   "onchange", update);
-		connect("goalHours",     "onchange", update);
 		connect("averageSource", "onchange", update);
 		connect("showAverages",  "onchange", update);
+		
+		connect("goalHours",     "oninput",  update);
 		
 		connect("showGoalLabel",     "onclick", createBoxClicker("showGoal"));
 		connect("showAveragesLabel", "onclick", createBoxClicker("showAverages"));
@@ -22,24 +23,28 @@ function createBackController( versionManager ) {
 			OPTION({"value": "oneMonth"},  localizedStrings["oneMonth"])
 		);
 		
-		replaceChildNodes("infoText", "v" + versionManager.getCurrentVersionString() + " " + scrapeText("infoText"));
+		replaceChildNodes("infoText", localizedStrings["infoText"].replace("%version%", versionManager.getCurrentVersionString()));
 		
 		replaceChildNodes("infoUrl", A({href: "#"}, scrapeText("infoUrl")));
 		
 		connect("infoUrl", "onclick", goToHomepage);
 		connect("iconara", "onclick", goToHomepage);
 	
+		update();
+	
 		return bc;
 	}
 	
 	var update = function( ) {
 		var weekendGoal        = getElement("weekendGoal");
-		var goalHours          = getElement("goalHours");
 		var averageSource      = getElement("averageSource");
+		var goalHours          = getElement("goalHours");
 	
 		weekendGoal.disabled   = ! showGoal.checked;
 		goalHours.disabled     = ! showGoal.checked;
 		averageSource.disabled = ! showAverages.checked;
+		
+		replaceChildNodes("hoursLabel", localizedStrings["hoursLabel"].replace("%hours%", goalHours.value));
 	}
 	
 	var createBoxClicker = function( boxName ) {

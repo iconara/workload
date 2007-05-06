@@ -12,3 +12,7 @@ function main( ) {
 	connect(widget, "showFront", widgetController, widgetController.start);
 	connect(widget, "showFront", preferencesController, preferencesController.update);
 }
+
+function sliderUpdated( event ) {
+	replaceChildNodes("sliderValue", event.target.value);
+}

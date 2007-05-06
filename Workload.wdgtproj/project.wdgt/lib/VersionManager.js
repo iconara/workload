@@ -11,7 +11,7 @@ function createVersionManager( url ) {
 	var init = function( ) {
 		try {
 			version = readDefault("CFBundleVersion");
-			build   = readDefault("CFBundleShortVersionString").replace(/b(\d+)/, "$1");
+			build   = readDefault("CFBundleShortVersionString").replace(/^.*b(\d+)\s*$/, "$1");
 			major   = version.replace(/^(\d+)\.\d+$/, "$1");
 			minor   = version.replace(/^\d+\.(\d+)$/, "$1");
 		} catch ( e ) {
@@ -22,7 +22,7 @@ function createVersionManager( url ) {
 	}
 	
 	var readDefault = function( name ) {
-		return widget.system("defaults read $PWD/Info " + name, null).outputString.replace(/\s*(.*)\s*/, "$1");
+		return trim(widget.system("defaults read $PWD/Info " + name, null).outputString);
 	}
 	
 	um.check = function( ) {
@@ -48,7 +48,7 @@ function createVersionManager( url ) {
 	}
 	
 	um.getCurrentVersionString = function( ) {
-		return major + "." + minor + "b" + build;
+		return "v" + major + "." + minor + "b" + build;
 	}
 	
 	return init();
