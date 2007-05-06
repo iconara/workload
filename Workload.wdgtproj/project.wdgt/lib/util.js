@@ -16,3 +16,10 @@ function createReverseDateGenerator( referenceDate ) {
 		}
 	}
 }
+
+/**
+ * Trim a string (why on earth is this not a built-in function?)
+ */
+function trim( str ) {
+	return str.replace(/^\s+/, "").replace(/\s+$/, "");
+}

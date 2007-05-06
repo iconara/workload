@@ -4,6 +4,8 @@
 <dict>
 	<key>CYBackwardCompatibleExport</key>
 	<false/>
+	<key>IsInCodeGeneratorMode</key>
+	<false/>
 	<key>Steps</key>
 	<array>
 		<dict>

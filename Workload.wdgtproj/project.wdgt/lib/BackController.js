@@ -1,4 +1,4 @@
-function createBackController( ) {
+function createBackController( versionManager ) {
 	var bc = { };
 	
 	
@@ -22,7 +22,7 @@ function createBackController( ) {
 			OPTION({"value": "oneMonth"},  localizedStrings["oneMonth"])
 		);
 		
-		replaceChildNodes("infoText", "v1.0b" + BUILD_NUMBER + " " + scrapeText("infoText"));
+		replaceChildNodes("infoText", "v" + versionManager.getCurrentVersionString() + " " + scrapeText("infoText"));
 		
 		replaceChildNodes("infoUrl", A({href: "#"}, scrapeText("infoUrl")));
 		

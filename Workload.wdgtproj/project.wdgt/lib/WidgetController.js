@@ -1,5 +1,3 @@
-var BUILD_NUMBER = 6;
-
 var UPDATE_INTERVAL = 1000 * 60 * 1;
 
 var VERSION_URL = "http://developer.iconara.net/products/Workload/version/";
@@ -28,12 +26,14 @@ function createWidgetController( preferencesController ) {
 	var updateInterval = null;
 	
 	var modelManager;
-	
 	var versionManager;
 	
 	var chart;
 	
 	var sheet;
+	
+	var backController;
+	var frontController;
 	
 	var updateErrorCount;
 	
@@ -50,14 +50,13 @@ function createWidgetController( preferencesController ) {
 			
 			connect(modelManager, "update", onModelUpdated);
 			connect(modelManager, "error",  onModelError);
-
-			chart = createChart(getElement("chart"), MAX_HOURS_PER_DAY);
 			
-			sheet = createSheet(getElement("sheet"));
-			
-			versionManager = createVersionManager(VERSION_URL, BUILD_NUMBER);
+			versionManager = createVersionManager(VERSION_URL);
 			
 			connect(versionManager, "update", onNewVersionAvailable);
+			
+			backController = createBackController(versionManager);
+			frontController = createFrontController(preferencesController);
 		} else {
 			inErrorState = true;
 			
@@ -96,19 +95,16 @@ function createWidgetController( preferencesController ) {
 		updateInterval = null;
 	}
 		
-	var update = function( ) {	
-		showElement("loadingIndicator");
-		hideElement("errorMessage");
+	var update = function( ) {
+		frontController.setLoading(true);
 
 		modelManager.update();
-
-		updateDayNames();		
 	}
 	
 	var onModelUpdated = function( ) {
 		updateWeekChart();
 		
-		hideElement("loadingIndicator");
+		frontController.setLoading(false);
 	}
 	
 	var onModelError = function( e ) {
@@ -120,21 +116,7 @@ function createWidgetController( preferencesController ) {
 			errorString = e.message;
 		}
 	
-		var reportLink = A({href: "#"}, createDOM("em", {}, localizedStrings["reportError"]));
-	
-		sheet.setContents([
-			P({}, localizedStrings["errorDataLoad"]),
-			P({}, reportLink)
-		]);
-		sheet.setVisible(true);
-	
-		connect(reportLink, "onclick", function( ) {
-			sendErrorReport(errorString);
-			
-			sheet.setVisible(false);
-		});
-	
-		hideElement("loadingIndicator");
+		frontController.showError(errorString, sendErrorReport);
 	}
 	
 	var sendErrorReport = function( errorString ) {
@@ -142,8 +124,11 @@ function createWidgetController( preferencesController ) {
 		var osVersion;
 		
 		try {
-			processorType = widget.system("system_profiler SPHardwareDataType | grep 'Processor Name'", null).outputString.replace(/Processor Name:\s*(.*)\s*$/, "$1");
-			osVersion = widget.system("system_profiler SPSoftwareDataType | grep 'System Version'", null).outputString.replace(/System Version:\s*(.*)\s*$/, "$1");
+			processorType = widget.system("system_profiler SPHardwareDataType | grep 'Processor Name'", null).outputString;
+			osVersion     = widget.system("system_profiler SPSoftwareDataType | grep 'System Version'", null).outputString;
+			
+			processorType = trim(processorType.replace(/Processor Name:(.*)/, "$1"));
+			osVersion     = trim(osVersion.replace(/System Version:(.*)/, "$1"));
 		} catch ( e ) {
 			processorType = "(error)";
 			osVersion     = "(error)";
@@ -151,7 +136,7 @@ function createWidgetController( preferencesController ) {
 	
 		var bugReportBody =
 			BUG_REPORT_BODY
-			.replace("%buildNumber%", BUILD_NUMBER)
+			.replace("%buildNumber%", versionManager.getCurrentVersionString())
 			.replace("%errorMessage%", errorString)
 			.replace("%processorType%", processorType)
 			.replace("%osVersion%", osVersion)
@@ -165,33 +150,10 @@ function createWidgetController( preferencesController ) {
 	}
 	
 	var onNewVersionAvailable = function( url ) {		
-		var downloadLink = A({href: "#"}, localizedStrings["newVersionAvailable"]);
-		
-		sheet.setContents(downloadLink);
-		sheet.setVisible(true);
-		
-		connect(downloadLink, "onclick", function( ) {
-			sheet.setVisible(false);
-			
-			widget.openURL(url); return false;
-		});
+		frontController.showNewVersion(url);
 	}
 	
 	var updateWeekChart = function( ) {
-		chart.clear();
-
-		chart.addSeries(modelManager.getPastWeekHours(), "#B30000");
-
-		if ( preferencesController.shouldShowGoal() ) {
-			chart.addSeries(alignWeek(getWeekGoals()), "rgba(255, 255, 255, 0.1)");
-		}
-
-		if ( preferencesController.shouldShowAverages() ) {
-			chart.addSeries(alignWeek(modelManager.getWeekAverages()), "rgba(0, 0, 0, 0.25)");
-		}
-	}
-
-	var updateDayNames = function( ) {
 		var dayNames = alignWeek([
 			localizedStrings["sunday"], 
 			localizedStrings["monday"],
@@ -201,12 +163,15 @@ function createWidgetController( preferencesController ) {
 			localizedStrings["friday"],
 			localizedStrings["saturday"]
 		]);
-
-		for ( var i = 0; i < 7; i++ ) {
-			replaceChildNodes("day" + i, dayNames[i].substring(0, 1).toUpperCase());
-		}
-	}
 	
+		frontController.updateChart(
+			dayNames,
+			modelManager.getPastWeekHours(),
+			alignWeek(getWeekGoals()),
+			alignWeek(modelManager.getWeekAverages())
+		);
+	}
+
 	var getWeekGoals = function( ) {
 		var goals = [ ];
 

@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /products/Workload
+RewriteRule ^version/?$ version/0/
+RewriteRule ^version/([0-9]+)$ version/$1/
+RewriteRule ^version/([0-9]+)/$ version.php?n=$1
+RewriteRule ^Workload.wdgt.zip$ newest.php [R]

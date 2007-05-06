@@ -1,4 +1,4 @@
-function createVersionManager( url, buildNumber ) {
+function createVersionManager( url ) {
 	var um = { };
 	
 	
@@ -15,6 +15,7 @@ function createVersionManager( url, buildNumber ) {
 			major   = version.replace(/^(\d+)\.\d+$/, "$1");
 			minor   = version.replace(/^\d+\.(\d+)$/, "$1");
 		} catch ( e ) {
+			return null;
 		}
 	
 		return um;
@@ -25,7 +26,7 @@ function createVersionManager( url, buildNumber ) {
 	}
 	
 	um.check = function( ) {
-		var d = doSimpleXMLHttpRequest(url + buildNumber);
+		var d = doSimpleXMLHttpRequest(url + build);
 		
 		d.addCallback(function( request ) {
 			var updateNodes = request.responseXML.getElementsByTagName("update");

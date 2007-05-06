@@ -40,13 +40,16 @@ var createSQLite = function( databasePath ) {
 		
 		// second filter: get the sqlite output data from the request object
 		d.addCallback(function( response ) {
-			if ( response.responseText.indexOf(SENTINEL) > -1 ) {
-				return response.responseText.replace(SENTINEL, "");
-			} else {
-				throw new Error("Data truncated");
+			try {
+				if ( response.responseText.indexOf(SENTINEL) > -1 ) {
+					return response.responseText.replace(SENTINEL, "");
+				} else {
+					throw new Error("Data truncated");
+				}
+			} finally {
+				// this makes sure we always clean up
+				widget.system("rm -f " + tmpfile, function( ) { });
 			}
-			
-			widget.system("rm -f " + tmpfile, function( ) { });
 		});
 		
 		// third filter: parse the sqlite output

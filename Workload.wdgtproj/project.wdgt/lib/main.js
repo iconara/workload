@@ -1,10 +1,8 @@
 var widgetController;
 var preferencesController;
-var backController;
 
 
 function main( ) {
-	backController        = createBackController();
 	preferencesController = createPreferencesController();
 	widgetController      = createWidgetController(preferencesController);
 
