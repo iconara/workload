@@ -50,13 +50,15 @@ function createWidgetController( preferencesController ) {
 			
 			connect(modelManager, "update", onModelUpdated);
 			connect(modelManager, "error",  onModelError);
-			
+
 			versionManager = createVersionManager(VERSION_URL);
 			
 			connect(versionManager, "update", onNewVersionAvailable);
 			
 			backController = createBackController(versionManager);
 			frontController = createFrontController(preferencesController);
+			
+			preferencesController.restore();
 		} else {
 			inErrorState = true;
 			

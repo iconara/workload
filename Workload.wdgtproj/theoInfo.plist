@@ -4,6 +4,10 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
+		<key>lib/PreferencesController.js:20</key>
+		<string>update</string>
+		<key>lib/PreferencesController.js:32</key>
+		<string>restore</string>
 		<key>lib/UpdateManager.js:12</key>
 		<string>check</string>
 	</dict>
@@ -32,11 +36,11 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>ccd4e47fd3dca741</string>
+		<string>2f152345d6dca741</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/tmp/Dashcode/.Workload.wdgtprojxe44zT/Workload.wdgtproj/project.wdgt/</string>
+		<string>/private/tmp/Dashcode/.Workload.wdgtprojqku9gu/Workload.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
@@ -44,13 +48,13 @@
 		<key>percent-type</key>
 		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.02708333358168602</real>
+		<real>0.079687498509883881</real>
 		<key>percent-y</key>
-		<real>0.078333333134651184</real>
+		<real>0.36333334445953369</real>
 		<key>pos-x</key>
-		<integer>1478</integer>
+		<integer>1377</integer>
 		<key>pos-y</key>
-		<integer>896</integer>
+		<integer>554</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
