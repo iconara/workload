@@ -1,4 +1,0 @@
-Workload suggestions:
-
-- Moneymeter (Ton)
-- Chargeable/non-chargeable (John)
