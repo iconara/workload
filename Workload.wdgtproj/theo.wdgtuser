@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>Breakpoints</key>
@@ -18,17 +18,13 @@
 		<key>ContentSplitViewConfig</key>
 		<integer>8</integer>
 		<key>SplitViewConfig</key>
-		<integer>3</integer>
-		<key>_collapsingFrameDimension</key>
-		<real>0.0</real>
+		<integer>1</integer>
 		<key>_indexOfCollapsedView</key>
 		<integer>0</integer>
-		<key>_percentageOfCollapsedView</key>
-		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {864, 353}}</string>
-			<string>{{0, 363}, {864, 710}}</string>
+			<string>{{0, 0}, {866, 402}}</string>
+			<string>{{0, 412}, {866, 602}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -58,40 +54,45 @@
 		<key>rosetta</key>
 		<false/>
 	</dict>
+	<key>DeploymentOptions</key>
+	<dict>
+		<key>Destination</key>
+		<string>localhost.default</string>
+		<key>EmailToNotifyAddress</key>
+		<string>theo@iconara.net</string>
+		<key>enableSimulation</key>
+		<true/>
+		<key>simulatedHost</key>
+		<string>babel.local</string>
+	</dict>
+	<key>Design time language</key>
+	<string>en.lproj</string>
 	<key>EvaluatorFrame</key>
-	<string>1428 708 492 468 0 0 1920 1178 </string>
+	<string>948 409 492 468 0 0 1440 878 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
-		<key>_collapsingFrameDimension</key>
-		<real>0.0</real>
 		<key>_indexOfCollapsedView</key>
 		<integer>0</integer>
-		<key>_percentageOfCollapsedView</key>
-		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {246, 1094}}</string>
-			<string>{{247, 0}, {865, 1094}}</string>
+			<string>{{0, 0}, {244, 794}}</string>
+			<string>{{245, 0}, {867, 794}}</string>
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>251 63 1111 1115 0 0 1920 1178 </string>
+	<string>102 63 1111 815 0 0 1440 878 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
 		<integer>5</integer>
 		<key>SplitViewConfig</key>
-		<integer>3</integer>
-		<key>_collapsingFrameDimension</key>
-		<real>0.0</real>
+		<integer>1</integer>
 		<key>_indexOfCollapsedView</key>
 		<integer>0</integer>
-		<key>_percentageOfCollapsedView</key>
-		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {248, 535}}</string>
-			<string>{{0, 545}, {248, 528}}</string>
+			<string>{{0, 0}, {246, 353}}</string>
+			<string>{{0, 363}, {246, 651}}</string>
 		</array>
 	</dict>
 	<key>Objects view expanded items</key>
@@ -138,5 +139,14 @@
 	<array>
 		<integer>4</integer>
 	</array>
+	<key>Widget</key>
+	<dict>
+		<key>Objects view last selections</key>
+		<array/>
+		<key>Visible StackLayout Views</key>
+		<array>
+			<string>front</string>
+		</array>
+	</dict>
 </dict>
 </plist>
