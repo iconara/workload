@@ -1,13 +1,9 @@
 var DURATION_BY_DATE_SQL = "" +
 	"SELECT " +
 	"	SUM(te.endDateTime - te.startDateTime) AS duration, " +
-	"	date(te.startDateTime + %referenceDate%, 'unixepoch') AS startDate " +
-	"FROM TimeEntry te LEFT JOIN TimeSlip ts ON te.timeSlipID = ts.timeSlipID " +
-	"WHERE " + 
-	"	1 = 1 " +
-//	"	AND strftime('%s', te.endDateTime + %referenceDate%) < strftime('%s', 'now') " + // doesn't work on PPC
-	"	AND te.foreignAppUser IS NULL " +
-	"	AND ts.timeSlipID IS NOT NULL " +
+	"	date(te.startDateTime, 'unixepoch') AS startDate " +
+	"FROM TimeEntry te LEFT JOIN TimeSlip ts ON te.timeSlipID = ts._rowid " +
+	"WHERE te.foreignAppUser IS NULL " +
 	"GROUP BY startDate " + 
 	"ORDER BY startDate " +
 	"";
